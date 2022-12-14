@@ -2,5 +2,5 @@
 
 public interface ICalculator
 {
-    double Calculate(string[] text);
+    public double Calculate();
 }
