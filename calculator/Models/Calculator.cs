@@ -9,12 +9,21 @@ public class CalculateFromText : ICalculator
 
     public CalculateFromText(string[] text)
     {
-        Text = text;    
+        Text = text;
     }
 
     private double SetLastRow()
     {
-        string[] lastLine = Text[Text.Length - 1].Split(' ');
+        string[] lastLine;
+        
+        if (Text.Length > 0)
+        {
+            lastLine = Text[Text.Length - 1].Split(' ');
+        }
+        else
+        {
+            throw new Exception("EmptyText!");
+        }
 
         if (lastLine[0] == "apply")
         {
@@ -23,7 +32,7 @@ public class CalculateFromText : ICalculator
             {
                 result = double.Parse(lastLine[1]);
             }
-            catch (System.FormatException)
+            catch (FormatException)
             {
                 try
                 {
@@ -45,6 +54,11 @@ public class CalculateFromText : ICalculator
     public double Calculate()
     {
         var result = SetLastRow();
+
+        if (Text.Length == 0)
+        {
+            return result;
+        }
 
         foreach (string line in Text)
         {
