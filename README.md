@@ -2,8 +2,10 @@
 ### By Robert Szwed
 <br/>
 
-To run this program in terminal go to **..\calculator\bin\Debug\net6.0** and run a command  **dotnet .\calculator.dll**<br/>
-or run program in Visual Studio, open **calculator.sln** and run program.
+To run this program in terminal go to **..\calculator\calculator** and run command **dotnet build** <br/>
+Next go to **..\calculator\calculatorbin\Debug\net6.0** and run a command  **dotnet .\calculator.dll**<br/>
+
+You can also open program in Visual Studio, open **calculator.sln** and run program.
 
 <br/>
 
