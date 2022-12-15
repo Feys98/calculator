@@ -17,7 +17,7 @@ public class ReadFromFile : IReadFromFile
     public async Task<string[]> ReadAllLinesAsync()
     {
         var lines = new List<string>();
-
+          
         try
         {
             await using var stream = new FileStream(Path, FileMode.Open, FileAccess.Read);
